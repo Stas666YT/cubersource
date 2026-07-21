@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключаем библиотеку для шифрования пароля -->
+    <script src="https://cloudflare.com"></script>
     <script>
+        // Зашифрованный хэш вашего пароля "G6jWxL"
+        const correctHash = "0bd9f15be682efbe16a5043513a96860d5bfa4875089c25dbb13e9a7e937ff7a";
+
         if (sessionStorage.getItem('admin_access') !== 'true') {
-            window.location.href = "index.html";
+            let pass = prompt("Доступ к системе:");
+            
+            // Защита от отмены ввода (если нажали "Отмена")
+            if (pass === null) {
+                window.location.href = "index.html";
+            } else {
+                // Хэшируем введенный текст
+                let inputHash = CryptoJS.SHA256(pass).toString();
+
+                if (inputHash === correctHash) {
+                    sessionStorage.setItem('admin_access', 'true');
+                } else {
+                    alert("ОШИБКА ДОСТУПА");
+                    window.location.href = "index.html";
+                }
+            }
         }
     </script>
     <link rel="icon" type="image/png" href="favicon.png">
@@ -93,7 +113,6 @@
 <script>
     function logout() { sessionStorage.removeItem('admin_access'); window.location.href = "index.html"; }
 
-    // Работа с заметками
     function saveNotes() { localStorage.setItem('dev_notes', document.getElementById('devNotes').value); }
     function loadNotes() { document.getElementById('devNotes').value = localStorage.getItem('dev_notes') || ''; }
 
