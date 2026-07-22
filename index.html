@@ -6,23 +6,41 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <title>CuberSource | ТЕХНИЧЕСКИЕ РАБОТЫ</title>
     <style>
-        /* Общие настройки: Твой оригинальный глубокий темный фон */
-        body { background: #0b0b0d; color: #e0e0e0; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
+        /* Общие настройки: Глубокий темный фон */
+        body { 
+            background: #0b0b0d; 
+            color: #e0e0e0; 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            margin: 0; 
+            overflow-x: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
         
-        /* Шапка с эффектом стекла (Твоя оригинальная) */
+        /* Шапка с эффектом стекла */
         header { 
             background: rgba(30, 30, 35, 0.8); 
             backdrop-filter: blur(10px); 
             padding: 10px 50px; 
-            display: flex; justify-content: space-between; align-items: center; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
             border-bottom: 1px solid rgba(0, 204, 255, 0.3); 
-            position: sticky; top: 0; z-index: 1000;
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
         }
 
-        /* Неоновый логотип (Твой оригинальный) */
+        /* Неоновый логотип */
         .logo { 
-            font-size: 26px; font-weight: bold; color: #fff; text-decoration: none; 
-            display: flex; align-items: center; gap: 12px;
+            font-size: 26px; 
+            font-weight: bold; 
+            color: #fff; 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px;
             transition: 0.3s;
         }
         .logo img { height: 45px; filter: drop-shadow(0 0 8px #00ccff); }
@@ -32,9 +50,12 @@
         .maintenance-content { 
             flex: 1;
             max-width: 700px; 
-            margin: 80px auto; 
-            padding: 40px 20px; 
+            margin: 60px auto; 
+            padding: 20px; 
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .maintenance-card {
@@ -43,6 +64,8 @@
             padding: 40px;
             border: 1px solid rgba(0, 204, 255, 0.2);
             box-shadow: 0 15px 35px rgba(0, 204, 255, 0.05);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .maintenance-card h2 { 
@@ -51,8 +74,7 @@
             text-transform: uppercase; 
             letter-spacing: 2px;
             margin-top: 0;
-            border-left: none;
-            padding-left: 0;
+            margin-bottom: 25px;
             text-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
         }
 
@@ -60,58 +82,68 @@
             font-size: 16px;
             line-height: 1.7;
             color: #b0b0b5;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
-        /* Твой фирменный неоновый цвет */
+        /* Неоновый голубой цвет */
         .highlight {
             color: #00ccff;
             font-weight: bold;
         }
         
-        /* Стиль для юзернейма */
-        .tg-contact {
+        /* Стиль для отображения юзернейма */
+        .tg-username {
             color: #fff;
-            background: rgba(0, 136, 204, 0.2);
-            padding: 5px 12px;
+            background: rgba(0, 136, 204, 0.15);
+            padding: 4px 12px;
             border-radius: 6px;
             border: 1px solid #0088cc;
-            text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
             display: inline-block;
-            margin-top: 5px;
-        }
-        .tg-contact:hover {
-            background: #0088cc;
-            box-shadow: 0 0 12px #0088cc;
-            transform: scale(1.03);
+            letter-spacing: 0.5px;
+            user-select: all;
         }
 
-        /* Пульсирующий блок статуса */
-.status-box {
-    margin: 30px auto 0 auto;
-    background: #111114;
-    border: 1px dashed #e94560;
-    color: #e94560;
-    padding: 15px 25px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 8px;
-    display: inline-block;
-    max-width: max-content;
-    animation: pulse 2s infinite;
-}
+        /* Аккуратный пульсирующий блок статуса (ФИКС ОШИБКИ) */
+        .status-box {
+            margin: 30px auto 0 auto;
+            background: #111114;
+            border: 1px dashed #e94560;
+            color: #e94560;
+            padding: 12px 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 8px;
+            display: inline-block;
+            max-width: max-content;
+            animation: pulse 2s infinite;
         }
 
-        /* Футер (Твой оригинальный) */
-        footer { background: #08080a; padding: 40px 20px; border-top: 1px solid #222; margin-top: auto; text-align: center; position: relative; }
+        /* Футер */
+        footer { 
+            background: #08080a; 
+            padding: 30px 20px; 
+            border-top: 1px solid #222; 
+            margin-top: auto; 
+            text-align: center; 
+            position: relative; 
+        }
+        
         .social-btn { 
-            display: inline-block; background: #0088cc; color: white; 
-            padding: 12px 30px; border-radius: 30px; text-decoration: none; 
-            font-weight: bold; transition: 0.3s; margin-bottom: 20px;
+            display: inline-block; 
+            background: #0088cc; 
+            color: white; 
+            padding: 12px 30px; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: 0.3s; 
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.2);
         }
-        .social-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px #0088cc; }
+        .social-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px #0088cc; }
 
         /* Скрытая шестеренка админа в подвале */
         .secret-gear {
@@ -126,19 +158,20 @@
         .secret-gear:hover {
             opacity: 1;
             text-shadow: 0 0 10px #00ccff;
+            color: #00ccff;
         }
 
         @keyframes pulse {
             0% { opacity: 0.7; }
-            50% { opacity: 1; box-shadow: 0 0 15px rgba(233, 69, 96, 0.2); }
+            50% { opacity: 1; box-shadow: 0 0 15px rgba(233, 69, 96, 0.15); }
             100% { opacity: 0.7; }
         }
 
         /* Мобильная адаптация */
         @media (max-width: 768px) {
             header { padding: 20px; justify-content: center; }
-            .maintenance-content { margin: 40px auto; }
-            .maintenance-card { padding: 25px; }
+            .maintenance-content { margin: 30px auto; }
+            .maintenance-card { padding: 25px 15px; }
             .maintenance-card h2 { font-size: 24px; }
         }
     </style>
@@ -161,21 +194,12 @@
         <p>
             Мы полностью перерабатываем систему, улучшаем стабильность и готовим для вас крупное обновление.
         </p>
-        <p style="margin-top: 20px; line-height: 1.8;">
+        <p style="margin-top: 25px;">
             По всем вопросам и предложениям вы можете написать создателю проекта.<br>
-            Для этого скопируйте никнейм и найдите его через поиск в приложении <span class="highlight">Telegram</span>: <br>
-            <span class="tg-contact" style="cursor: text; background: rgba(0, 136, 204, 0.1);">@mrflazer</span>
+            Для этого скопируйте никнейм и найдите его через поиск в приложении <span class="highlight">Telegram</span>:<br>
+            <span class="tg-username">@mrflazer</span>
         </p>
-        <p class="highlight" style="margin-top: 25px;">
-            ➔ Скоро будет масштабное обновление интерфейса и добавление новых игр!
-        </p>
-        <div class="status-box">
-            ● ИДЕТ НАСТРОЙКА ЯДРА СИСТЕМЫ v2.6
-        </div>
-    </div>
-</div>
-    
-        <p class="highlight" style="margin-top: 25px;">
+        <p class="highlight" style="margin-top: 25px; margin-bottom: 0;">
             ➔ Скоро будет масштабное обновление интерфейса и добавление новых игр!
         </p>
         <div class="status-box">
@@ -185,8 +209,8 @@
 </div>
 
 <footer>
-    <!-- Зеркало для ссылки канала -->
-    <a href="https://t.me/mrflazer_play" class="social-btn" target="_blank">НАШ ТЕЛЕГРАМ КАНАЛ</a>
+    <!-- Зеркало tg.me для открытия в Ашхабаде без VPN -->
+    <a href="https://tg.me" class="social-btn" target="_blank">НАШ ТЕЛЕГРАМ КАНАЛ</a>
     <p style="color: #444; font-size: 13px; margin: 0;">
         &copy; 2026 CuberSource. Все права защищены. <span class="secret-gear" onclick="checkAdmin()">⚙️</span>
     </p>
