@@ -62,10 +62,29 @@
             color: #b0b0b5;
         }
 
-        /* Твой фирменный неоновый цвет для важных объявлений */
+        /* Твой фирменный неоновый цвет */
         .highlight {
             color: #00ccff;
             font-weight: bold;
+        }
+        
+        /* Стиль для юзернейма */
+        .tg-contact {
+            color: #fff;
+            background: rgba(0, 136, 204, 0.2);
+            padding: 5px 12px;
+            border-radius: 6px;
+            border: 1px solid #0088cc;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .tg-contact:hover {
+            background: #0088cc;
+            box-shadow: 0 0 12px #0088cc;
+            transform: scale(1.03);
         }
 
         /* Пульсирующий блок статуса */
@@ -140,7 +159,21 @@
         <p>
             Мы полностью перерабатываем систему, улучшаем стабильность и готовим для вас крупное обновление.
         </p>
-        <p class="highlight">
+        <p style="margin-top: 20px; line-height: 1.8;">
+            По всем вопросам и предложениям вы можете написать создателю проекта.<br>
+            Для этого скопируйте никнейм и найдите его через поиск в приложении <span class="highlight">Telegram</span>: <br>
+            <span class="tg-contact" style="cursor: text; background: rgba(0, 136, 204, 0.1);">@mrflazer</span>
+        </p>
+        <p class="highlight" style="margin-top: 25px;">
+            ➔ Скоро будет масштабное обновление интерфейса и добавление новых игр!
+        </p>
+        <div class="status-box">
+            ● ИДЕТ НАСТРОЙКА ЯДРА СИСТЕМЫ v2.6
+        </div>
+    </div>
+</div>
+    
+        <p class="highlight" style="margin-top: 25px;">
             ➔ Скоро будет масштабное обновление интерфейса и добавление новых игр!
         </p>
         <div class="status-box">
@@ -150,7 +183,8 @@
 </div>
 
 <footer>
-    <a href="https://t.me" class="social-btn" target="_blank">НАШ ТЕЛЕГРАМ КАНАЛ</a>
+    <!-- Зеркало для ссылки канала -->
+    <a href="https://t.me/mrflazer_play" class="social-btn" target="_blank">НАШ ТЕЛЕГРАМ КАНАЛ</a>
     <p style="color: #444; font-size: 13px; margin: 0;">
         &copy; 2026 CuberSource. Все права защищены. <span class="secret-gear" onclick="checkAdmin()">⚙️</span>
     </p>
@@ -158,7 +192,7 @@
 
 <script>
     function checkAdmin() {
-        // Безопасное перенаправление без хранения пароля в index.html
+        // Перенаправление на скрытую страницу управления
         window.location.href = "admin.html";
     }
 </script>
